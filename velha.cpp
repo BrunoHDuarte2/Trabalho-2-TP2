@@ -1,5 +1,7 @@
 #include "velha.hpp"
-int verifica_resultado(vector<vector<int>> jogo_da_velha)
+#include <vector>
+using namespace std;
+int verifica_resultado(const vector<vector<int>> tabuleiro)
 {
     return 0;
 }
