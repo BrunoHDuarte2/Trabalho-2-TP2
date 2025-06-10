@@ -119,7 +119,7 @@ TEST_CASE( "Empate", "[velha]" ) {
     REQUIRE( verifica_resultado(tabuleiro) == 0);
     tabuleiro = {
         {1, 1, 2},
-        {1, 1, 2},
+        {1, 2, 1},
         {2, 2, 1}
     };
     REQUIRE( verifica_resultado(tabuleiro) == 0);
