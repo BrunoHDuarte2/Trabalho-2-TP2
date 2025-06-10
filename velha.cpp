@@ -58,5 +58,4 @@ int verifica_resultado(const vector<vector<int>> tabuleiro)
         return -1;
     }
     
-    return 0;
 }
