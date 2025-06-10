@@ -124,3 +124,24 @@ TEST_CASE( "Indefinido", "[velha]" ) {
     };
     REQUIRE( verifica_resultado(tabuleiro) == -1);
 }
+TEST_CASE( "Impossível", "[velha]" ) {
+    vector<vector<int>> tabuleiro = {
+        {2, 1, 1},
+        {1, 1, 1},
+        {2, 1, 1}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == -1);
+    tabuleiro = {
+        {1, 1, 1},
+        {1, 1, 1},
+        {1, 1, 1}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == -1);
+    tabuleiro = {
+        {1, 2, 2},
+        {1, 2, 2},
+        {2, 2, 0}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == -1);
+}
+
