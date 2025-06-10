@@ -7,6 +7,12 @@ bool valida_linha_X(vector<vector<int>> tabuleiro){
     bool terceiraLinha = (tabuleiro[2][0] == 1)&&(tabuleiro[2][1] == 1)&&(tabuleiro[2][2] == 1);
     return primeiraLinha||segundaLinha||terceiraLinha;
 }
+bool valida_linha_O(vector<vector<int>> tabuleiro){
+    bool primeiraLinha = (tabuleiro[0][0] == 2)&&(tabuleiro[0][1] == 2)&&(tabuleiro[0][2] == 2);
+    bool segundaLinha = (tabuleiro[1][0] == 2)&&(tabuleiro[1][1] == 2)&&(tabuleiro[1][2] == 2);
+    bool terceiraLinha = (tabuleiro[2][0] == 2)&&(tabuleiro[2][1] == 2)&&(tabuleiro[2][2] == 2);
+    return primeiraLinha||segundaLinha||terceiraLinha;
+}
 bool valida_coluna_X(vector<vector<int>> tabuleiro){
     bool primeiraColuna = (tabuleiro[0][0] == 1)&&(tabuleiro[1][0] == 1)&&(tabuleiro[2][0] == 1);
     bool segundaColuna = (tabuleiro[0][1] == 1)&&(tabuleiro[1][1] == 1)&&(tabuleiro[2][1] == 1);
@@ -19,6 +25,10 @@ int verifica_resultado(const vector<vector<int>> tabuleiro)
     bool colunaDeX = valida_coluna_X(tabuleiro);
     if(linhaDeX||colunaDeX){
         return 1;
+    }
+    bool linhaDeO = valida_linha_O(tabuleiro);
+    if(linhaDeO){
+        return 2;
     }
     return 0;
 }

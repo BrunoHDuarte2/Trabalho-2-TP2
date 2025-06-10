@@ -47,14 +47,14 @@ TEST_CASE( "Vitoria do X Coluna", "[velha]" ) {
 TEST_CASE( "Vitoria do O Linha", "[velha]" ) {
     vector<vector<int>> tabuleiro = {
         {2, 2, 2},
-        {1, 1, 1},
-        {0, 0, 0}
+        {1, 0, 1},
+        {0, 1, 0}
     };
     REQUIRE( verifica_resultado(tabuleiro) == 2);
     tabuleiro = {
-        {1, 1, 1},
+        {1, 0, 1},
         {2, 2, 2},
-        {0, 0, 0}
+        {0, 1, 0}
     };
     REQUIRE( verifica_resultado(tabuleiro) == 2);
     tabuleiro = {
