@@ -56,6 +56,6 @@ int verifica_resultado(const vector<vector<int>> tabuleiro)
     }
     if(empate(tabuleiro)){
         return -1;
-    }
+    } else return 0;
     
 }
