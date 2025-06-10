@@ -166,8 +166,8 @@ TEST_CASE( "Vitoria do O Diagonal secundaria", "[velha]" ) {
 }
 TEST_CASE( "Empate", "[velha]" ) {
     vector<vector<int>> tabuleiro = {
-        {2, 1, 2},
-        {1, 2, 1},
+        {2, 1, 1},
+        {1, 2, 2},
         {2, 1, 1}
     };
     REQUIRE( verifica_resultado(tabuleiro) == 0);
@@ -178,9 +178,9 @@ TEST_CASE( "Empate", "[velha]" ) {
     };
     REQUIRE( verifica_resultado(tabuleiro) == 0);
     tabuleiro = {
-        {1, 1, 2},
-        {1, 2, 1},
-        {2, 2, 1}
+        {2, 1, 1},
+        {1, 2, 2},
+        {2, 1, 1}
     };
     REQUIRE( verifica_resultado(tabuleiro) == 0);
 }
