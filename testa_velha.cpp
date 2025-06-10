@@ -64,3 +64,23 @@ TEST_CASE( "Vitoria do O Linha", "[velha]" ) {
     };
     REQUIRE( verifica_resultado(tabuleiro) == 2);
 }
+TEST_CASE( "Vitoria do O Coluna", "[velha]" ) {
+    vector<vector<int>> tabuleiro = {
+        {2, 1, 0},
+        {2, 0, 1},
+        {2, 1, 0}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 2);
+    tabuleiro = {
+        {1, 2, 0},
+        {1, 2, 1},
+        {0, 2, 0}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 2);
+    tabuleiro = {
+        {0, 1, 2},
+        {1, 0, 2},
+        {0, 1, 2}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 2);
+}
