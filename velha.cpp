@@ -25,6 +25,23 @@ bool valida_coluna_O(vector<vector<int>> tabuleiro){
     bool terceiraColuna = (tabuleiro[0][2] == 2)&&(tabuleiro[1][2] == 2)&&(tabuleiro[2][2] == 2);
     return primeiraColuna||segundaColuna||terceiraColuna;
 }
+bool empate(vector<vector<int>> tabuleiro){
+    int numX=0;
+    int numO=0;
+    for(int i=0; i<3;i++){
+        for(int j=0; j<3;j++){
+            if(tabuleiro[i][j]==1){
+                numX++;
+            } 
+            if(tabuleiro[i][j]==2){
+                numO++;
+            } 
+        }
+    }
+    // Caso onde o tabuleiro está completo, assim pode-se usar o resultado obtido anteriormente!
+    // Já que ninguém venceu e o tabuleiro está completo -> Empate
+    return (numX==5)&&(numO==4);
+}
 int verifica_resultado(const vector<vector<int>> tabuleiro)
 {
     bool linhaDeX = valida_linha_X(tabuleiro);
@@ -37,5 +54,9 @@ int verifica_resultado(const vector<vector<int>> tabuleiro)
     if(linhaDeO||colunaDeO){
         return 2;
     }
+    if(empate(tabuleiro)){
+        return -1;
+    }
+    
     return 0;
 }
