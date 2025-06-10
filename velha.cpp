@@ -62,8 +62,29 @@ bool empate(vector<vector<int>> tabuleiro){
     // Já que ninguém venceu e o tabuleiro está completo -> Empate
     return (numX==5)&&(numO==4);
 }
+bool impossivel(vector<vector<int>> tabuleiro){
+    int numX=0;
+    int numO=0;
+    for(int i=0; i<tabuleiro.size(); i++){
+        for(int j=0; j<tabuleiro.size();j++){
+            if(tabuleiro[i][j]==1){
+                numX++;
+            }
+            if(tabuleiro[i][j]==2){
+                numO++;
+            }
+        }
+    }
+    // Casos:
+    // Jogador X jogou mais vezes que o jogador O
+    // Jogador O jogou mais vezes que o jogador X
+    return (numX>numO+1) || (numX<numO);
+}
 int verifica_resultado(const vector<vector<int>> tabuleiro)
 {
+    if(impossivel(tabuleiro)) {
+        return -2;
+    }
     bool linhaDeX = valida_linha_X(tabuleiro);
     bool colunaDeX = valida_coluna_X(tabuleiro);
     if(linhaDeX||colunaDeX){

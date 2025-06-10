@@ -130,18 +130,18 @@ TEST_CASE( "Impossível", "[velha]" ) {
         {1, 1, 1},
         {2, 1, 1}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == -1);
+    REQUIRE( verifica_resultado(tabuleiro) == -2);
     tabuleiro = {
         {1, 1, 1},
         {1, 1, 1},
         {1, 1, 1}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == -1);
+    REQUIRE( verifica_resultado(tabuleiro) == -2);
     tabuleiro = {
         {1, 2, 2},
         {1, 2, 2},
         {2, 2, 0}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == -1);
+    REQUIRE( verifica_resultado(tabuleiro) == -2);
 }
 
