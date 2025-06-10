@@ -50,6 +50,9 @@ bool valida_diagonal_secundaria_X(vector<vector<int>> tabuleiro){
 bool valida_diagonal_principal_O(vector<vector<int>> tabuleiro){
     return (tabuleiro[0][0]==2)&&(tabuleiro[1][1]==2)&&(tabuleiro[2][2]==2);
 }
+bool valida_diagonal_secundaria_O(vector<vector<int>> tabuleiro){
+    return (tabuleiro[0][2]==2)&&(tabuleiro[1][1]==2)&&(tabuleiro[2][0]==2);
+}
 /*
     empate  <- estado do jogo da velha.
     Verifica se todos as posições foram preenchidas, supondo que X sempre começa.
