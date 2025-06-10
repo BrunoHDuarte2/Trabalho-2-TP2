@@ -107,7 +107,8 @@ int verifica_resultado(const vector<vector<int>> tabuleiro)
     bool linhaDeO = valida_linha_O(tabuleiro);
     bool colunaDeO = valida_coluna_O(tabuleiro);
     bool diagonalPDeO = valida_diagonal_principal_O(tabuleiro);
-    if(linhaDeO||colunaDeO||diagonalPDeO){
+    bool diagonalSDeO = valida_diagonal_secundaria_O(tabuleiro);
+    if(linhaDeO||colunaDeO||diagonalPDeO||diagonalSDeO){
         return 2;
     }
     if(empate(tabuleiro)){
