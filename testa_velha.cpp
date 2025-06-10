@@ -44,6 +44,26 @@ TEST_CASE( "Vitoria do X Coluna", "[velha]" ) {
     };
     REQUIRE( verifica_resultado(tabuleiro) == 1);
 }
+TEST_CASE( "Vitoria do X Diagonal principal", "[velha]" ) {
+    vector<vector<int>> tabuleiro = {
+        {1, 0, 0},
+        {2, 1, 2},
+        {0, 0, 1}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 1);
+    tabuleiro = {
+        {1, 2, 0},
+        {1, 1, 2},
+        {2, 2, 1}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 1);
+    tabuleiro = {
+        {1, 2, 2},
+        {0, 1, 0},
+        {2, 1, 1}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 1);
+}
 TEST_CASE( "Vitoria do O Linha", "[velha]" ) {
     vector<vector<int>> tabuleiro = {
         {2, 2, 2},
