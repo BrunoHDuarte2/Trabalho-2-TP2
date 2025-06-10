@@ -90,19 +90,19 @@ TEST_CASE( "Empate", "[velha]" ) {
         {1, 2, 1},
         {2, 1, 1}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == -1);
+    REQUIRE( verifica_resultado(tabuleiro) == 0);
     tabuleiro = {
         {1, 2, 1},
         {1, 2, 1},
         {2, 1, 2}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == -1);
+    REQUIRE( verifica_resultado(tabuleiro) == 0);
     tabuleiro = {
         {1, 1, 2},
         {1, 1, 2},
         {2, 2, 1}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == -1);
+    REQUIRE( verifica_resultado(tabuleiro) == 0);
 }
 TEST_CASE( "Indefinido", "[velha]" ) {
     vector<vector<int>> tabuleiro = {
@@ -110,17 +110,17 @@ TEST_CASE( "Indefinido", "[velha]" ) {
         {1, 2, 1},
         {2, 1, 1}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == 0);
+    REQUIRE( verifica_resultado(tabuleiro) == -1);
     tabuleiro = {
         {1, 2, 1},
         {0, 2, 1},
         {2, 1, 2}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == 0);
+    REQUIRE( verifica_resultado(tabuleiro) == -1);
     tabuleiro = {
         {1, 1, 2},
         {1, 1, 2},
         {2, 2, 0}
     };
-    REQUIRE( verifica_resultado(tabuleiro) == 0);
+    REQUIRE( verifica_resultado(tabuleiro) == -1);
 }

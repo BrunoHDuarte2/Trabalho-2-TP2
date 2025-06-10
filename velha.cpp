@@ -1,50 +1,50 @@
 #include "velha.hpp"
 #include <vector>
 using namespace std;
-"""
+/*
     valida_linha_X  <- estado do jogo da velha
     verifica se ocorre tres 1's consecutivos em alguma das linhas.
-"""
+*/
 bool valida_linha_X(vector<vector<int>> tabuleiro){
     bool primeiraLinha = (tabuleiro[0][0] == 1)&&(tabuleiro[0][1] == 1)&&(tabuleiro[0][2] == 1);
     bool segundaLinha = (tabuleiro[1][0] == 1)&&(tabuleiro[1][1] == 1)&&(tabuleiro[1][2] == 1);
     bool terceiraLinha = (tabuleiro[2][0] == 1)&&(tabuleiro[2][1] == 1)&&(tabuleiro[2][2] == 1);
     return primeiraLinha||segundaLinha||terceiraLinha;
 }
-"""
+/*
     valida_linha_O  <- estado do jogo da velha
     verifica se ocorre tres 2's consecutivos em alguma das linhas.
-"""
+*/
 bool valida_linha_O(vector<vector<int>> tabuleiro){
     bool primeiraLinha = (tabuleiro[0][0] == 2)&&(tabuleiro[0][1] == 2)&&(tabuleiro[0][2] == 2);
     bool segundaLinha = (tabuleiro[1][0] == 2)&&(tabuleiro[1][1] == 2)&&(tabuleiro[1][2] == 2);
     bool terceiraLinha = (tabuleiro[2][0] == 2)&&(tabuleiro[2][1] == 2)&&(tabuleiro[2][2] == 2);
     return primeiraLinha||segundaLinha||terceiraLinha;
 }
-"""
+/*
     valida_coluna_X  <- estado do jogo da velha
     verifica se ocorre tres 1's consecutivos em alguma das colunas.
-"""
+*/
 bool valida_coluna_X(vector<vector<int>> tabuleiro){
     bool primeiraColuna = (tabuleiro[0][0] == 1)&&(tabuleiro[1][0] == 1)&&(tabuleiro[2][0] == 1);
     bool segundaColuna = (tabuleiro[0][1] == 1)&&(tabuleiro[1][1] == 1)&&(tabuleiro[2][1] == 1);
     bool terceiraColuna = (tabuleiro[0][2] == 1)&&(tabuleiro[1][2] == 1)&&(tabuleiro[2][2] == 1);
     return primeiraColuna||segundaColuna||terceiraColuna;
 }
-"""
+/*
     valida_coluna_X  <- estado do jogo da velha
     verifica se ocorre tres 2's consecutivos em alguma das colunas.
-"""
+*/
 bool valida_coluna_O(vector<vector<int>> tabuleiro){
     bool primeiraColuna = (tabuleiro[0][0] == 2)&&(tabuleiro[1][0] == 2)&&(tabuleiro[2][0] == 2);
     bool segundaColuna = (tabuleiro[0][1] == 2)&&(tabuleiro[1][1] == 2)&&(tabuleiro[2][1] == 2);
     bool terceiraColuna = (tabuleiro[0][2] == 2)&&(tabuleiro[1][2] == 2)&&(tabuleiro[2][2] == 2);
     return primeiraColuna||segundaColuna||terceiraColuna;
 }
-"""
+/*
     empate  <- estado do jogo da velha.
     Verifica se todos as posições foram preenchidas, supondo que X sempre começa.
-"""
+*/
 bool empate(vector<vector<int>> tabuleiro){
     int numX=0;
     int numO=0;
@@ -75,7 +75,7 @@ int verifica_resultado(const vector<vector<int>> tabuleiro)
         return 2;
     }
     if(empate(tabuleiro)){
-        return -1;
-    } else return 0;
+        return 0;
+    } else return -1;
     
 }
