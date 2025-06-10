@@ -44,6 +44,9 @@ bool valida_coluna_O(vector<vector<int>> tabuleiro){
 bool valida_diagonal_principal_X(vector<vector<int>> tabuleiro){
     return (tabuleiro[0][0]==1)&&(tabuleiro[1][1]==1)&&(tabuleiro[2][2]==1);
 }
+bool valida_diagonal_secundaria_X(vector<vector<int>> tabuleiro){
+    return (tabuleiro[0][2]==1)&&(tabuleiro[1][1]==1)&&(tabuleiro[2][0]==1);
+}
 /*
     empate  <- estado do jogo da velha.
     Verifica se todos as posições foram preenchidas, supondo que X sempre começa.
@@ -90,8 +93,9 @@ int verifica_resultado(const vector<vector<int>> tabuleiro)
     }
     bool linhaDeX = valida_linha_X(tabuleiro);
     bool colunaDeX = valida_coluna_X(tabuleiro);
-    bool diagonalDeX = valida_diagonal_principal_X(tabuleiro);
-    if(linhaDeX||colunaDeX||diagonalDeX){
+    bool diagonalPDeX = valida_diagonal_principal_X(tabuleiro);
+    bool diagonalSDeX = valida_diagonal_secundaria_X(tabuleiro);
+    if(linhaDeX||colunaDeX||diagonalPDeX||diagonalSDeX){
         return 1;
     }
     bool linhaDeO = valida_linha_O(tabuleiro);
