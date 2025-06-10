@@ -4,11 +4,43 @@
 #include <vector>
 using namespace std;
 
-TEST_CASE( "Vitoria do X", "[velha]" ) {
+TEST_CASE( "Vitoria do X Linha", "[velha]" ) {
     vector<vector<int>> tabuleiro = {
         {1, 1, 1},
         {2, 2, 0},
         {0, 0, 0}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 1);
+    tabuleiro = {
+        {0, 2, 2},
+        {1, 1, 1},
+        {0, 0, 0}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 1);
+    tabuleiro = {
+        {0, 2, 2},
+        {0, 0, 0},
+        {1, 1, 1}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 1);
+}
+TEST_CASE( "Vitoria do X Coluna", "[velha]" ) {
+    vector<vector<int>> tabuleiro = {
+        {1, 0, 2},
+        {1, 2, 0},
+        {1, 0, 0}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 1);
+    tabuleiro = {
+        {2, 1, 2},
+        {0, 1, 0},
+        {0, 1, 0}
+    };
+    REQUIRE( verifica_resultado(tabuleiro) == 1);
+    tabuleiro = {
+        {0, 2, 1},
+        {0, 0, 1},
+        {0, 2, 1}
     };
     REQUIRE( verifica_resultado(tabuleiro) == 1);
 }
