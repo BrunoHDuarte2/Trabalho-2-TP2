@@ -11,6 +11,7 @@
  */
 #include "velha.hpp"
 #include <vector>
+#include <cassert>
 using std::vector;
 
 /**
@@ -21,6 +22,7 @@ using std::vector;
  * @return true se o jogador venceu em alguma linha, false caso contrário.
  */
 bool valida_linha_player(vector<vector<int>> tabuleiro, int player) {
+    assert(player == 1 || player == 2);
     bool primeiraLinha = (tabuleiro[0][0] == player)&&
                         (tabuleiro[0][1] == player)&&
                         (tabuleiro[0][2] == player);
@@ -41,6 +43,7 @@ bool valida_linha_player(vector<vector<int>> tabuleiro, int player) {
  * @return true se o jogador venceu em alguma coluna, false caso contrário.
  */
 bool valida_coluna_player(vector<vector<int>> tabuleiro, int player) {
+    assert(player == 1 || player == 2);
     bool primeiraColuna = (tabuleiro[0][0] == player)&&
                         (tabuleiro[1][0] == player)&&
                         (tabuleiro[2][0] == player);
@@ -62,6 +65,7 @@ bool valida_coluna_player(vector<vector<int>> tabuleiro, int player) {
  * @return true se o jogador venceu na diagonal principal, false caso contrário.
  */
 bool valida_diagonal_principal_player(vector<vector<int>> tabuleiro, int player) {
+    assert(player == 1 || player == 2);
     return (tabuleiro[0][0] == player)&&
             (tabuleiro[1][1] == player)&&
             (tabuleiro[2][2] == player);
@@ -75,6 +79,7 @@ bool valida_diagonal_principal_player(vector<vector<int>> tabuleiro, int player)
  * @return true se o jogador venceu na diagonal secundária, false caso contrário.
  */
 bool valida_diagonal_secundaria_player(vector<vector<int>> tabuleiro, int player) {
+    assert(player == 1 || player == 2);
     return (tabuleiro[0][2] == player) &&
             (tabuleiro[1][1] == player) &&
             (tabuleiro[2][0] == player);
@@ -141,6 +146,16 @@ bool impossivel(vector<vector<int>> tabuleiro) {
  * -  2: vitória do jogador O
  */
 int verifica_resultado(const vector<vector<int>> tabuleiro) {
+    // Garantindo que o tamanho da matriz é 3.
+    assert(tabuleiro.size() == 3);
+    for (auto linha : tabuleiro) {
+        // Garantindo que a matriz é 3x3
+        assert(linha.size() == 3);
+        for (int cel : linha) {
+            // Garantindo que todo valor da matriz pertence a {0, 1, 2}
+            assert(cel == 0 || cel == 1 || cel == 2);
+        }
+    }
     if ( impossivel(tabuleiro) ) {
         return -2;
     }
