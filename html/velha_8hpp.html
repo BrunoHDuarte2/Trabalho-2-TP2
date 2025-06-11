@@ -102,12 +102,239 @@ Este grafo mostra quais arquivos estão direta ou indiretamente relacionados com
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funções</h2></td></tr>
-<tr class="memitem:a1a2902bf89f547cd5b06118bfd5afaf1" id="r_a1a2902bf89f547cd5b06118bfd5afaf1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="velha_8hpp.html#a1a2902bf89f547cd5b06118bfd5afaf1">verifica_resultado</a> (vector&lt; vector&lt; int &gt; &gt; jogo_da_velha)</td></tr>
-<tr class="separator:a1a2902bf89f547cd5b06118bfd5afaf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad661731dc321fe5d8554d878c0966188" id="r_ad661731dc321fe5d8554d878c0966188"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="velha_8hpp.html#ad661731dc321fe5d8554d878c0966188">valida_linha_player</a> (vector&lt; vector&lt; int &gt; &gt; tabuleiro, int player)</td></tr>
+<tr class="memdesc:ad661731dc321fe5d8554d878c0966188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o jogador venceu em alguma linha.  <br /></td></tr>
+<tr class="separator:ad661731dc321fe5d8554d878c0966188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd75c3bd7669c04ce12fa698216ff78" id="r_a3dd75c3bd7669c04ce12fa698216ff78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="velha_8hpp.html#a3dd75c3bd7669c04ce12fa698216ff78">valida_coluna_player</a> (vector&lt; vector&lt; int &gt; &gt; tabuleiro, int player)</td></tr>
+<tr class="memdesc:a3dd75c3bd7669c04ce12fa698216ff78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o jogador venceu em alguma coluna.  <br /></td></tr>
+<tr class="separator:a3dd75c3bd7669c04ce12fa698216ff78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf1aac6b1a8c133abaad377b4632fd24" id="r_adf1aac6b1a8c133abaad377b4632fd24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="velha_8hpp.html#adf1aac6b1a8c133abaad377b4632fd24">valida_diagonal_principal_player</a> (vector&lt; vector&lt; int &gt; &gt; tabuleiro, int player)</td></tr>
+<tr class="memdesc:adf1aac6b1a8c133abaad377b4632fd24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o jogador venceu na diagonal principal.  <br /></td></tr>
+<tr class="separator:adf1aac6b1a8c133abaad377b4632fd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a823d1eb14f64741731f37b0c46ba599e" id="r_a823d1eb14f64741731f37b0c46ba599e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="velha_8hpp.html#a823d1eb14f64741731f37b0c46ba599e">valida_diagonal_secundaria_player</a> (vector&lt; vector&lt; int &gt; &gt; tabuleiro, int player)</td></tr>
+<tr class="memdesc:a823d1eb14f64741731f37b0c46ba599e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o jogador venceu na diagonal secundária.  <br /></td></tr>
+<tr class="separator:a823d1eb14f64741731f37b0c46ba599e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dda873f4daa91a7c1e2a2efca03e8da" id="r_a4dda873f4daa91a7c1e2a2efca03e8da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="velha_8hpp.html#a4dda873f4daa91a7c1e2a2efca03e8da">empate</a> (vector&lt; vector&lt; int &gt; &gt; tabuleiro)</td></tr>
+<tr class="memdesc:a4dda873f4daa91a7c1e2a2efca03e8da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o jogo terminou em empate.  <br /></td></tr>
+<tr class="separator:a4dda873f4daa91a7c1e2a2efca03e8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52ed1c4340e974b216b4a25ff1cab124" id="r_a52ed1c4340e974b216b4a25ff1cab124"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="velha_8hpp.html#a52ed1c4340e974b216b4a25ff1cab124">impossivel</a> (vector&lt; vector&lt; int &gt; &gt; tabuleiro)</td></tr>
+<tr class="memdesc:a52ed1c4340e974b216b4a25ff1cab124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica se o estado atual do jogo é impossível.  <br /></td></tr>
+<tr class="separator:a52ed1c4340e974b216b4a25ff1cab124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a732edbf8bfe3675f6b084b7acf0afe47" id="r_a732edbf8bfe3675f6b084b7acf0afe47"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="velha_8hpp.html#a732edbf8bfe3675f6b084b7acf0afe47">verifica_resultado</a> (vector&lt; vector&lt; int &gt; &gt; tabuleiro)</td></tr>
+<tr class="memdesc:a732edbf8bfe3675f6b084b7acf0afe47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica o resultado do jogo da velha.  <br /></td></tr>
+<tr class="separator:a732edbf8bfe3675f6b084b7acf0afe47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Funções</h2>
-<a id="a1a2902bf89f547cd5b06118bfd5afaf1" name="a1a2902bf89f547cd5b06118bfd5afaf1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a2902bf89f547cd5b06118bfd5afaf1">&#9670;&#160;</a></span>verifica_resultado()</h2>
+<a id="a4dda873f4daa91a7c1e2a2efca03e8da" name="a4dda873f4daa91a7c1e2a2efca03e8da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4dda873f4daa91a7c1e2a2efca03e8da">&#9670;&#160;</a></span>empate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool empate </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se o jogo terminou em empate. </p>
+<p>Considera que o jogador X sempre inicia, então empate ocorre com 5 jogadas de X e 4 de O, sem que nenhum tenha vencido.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tabuleiro</td><td>Matriz 3x3 representando o estado do jogo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o jogo terminou empatado, false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a52ed1c4340e974b216b4a25ff1cab124" name="a52ed1c4340e974b216b4a25ff1cab124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52ed1c4340e974b216b4a25ff1cab124">&#9670;&#160;</a></span>impossivel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool impossivel </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se o estado atual do jogo é impossível. </p>
+<p>Situações impossíveis incluem: X jogou mais de uma vez a mais que O, ou O jogou mais que X.</p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tabuleiro</td><td>Matriz 3x3 representando o estado do jogo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o estado do tabuleiro é impossível, false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a3dd75c3bd7669c04ce12fa698216ff78" name="a3dd75c3bd7669c04ce12fa698216ff78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd75c3bd7669c04ce12fa698216ff78">&#9670;&#160;</a></span>valida_coluna_player()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool valida_coluna_player </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se o jogador venceu em alguma coluna. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tabuleiro</td><td>Matriz 3x3 representando o estado do jogo. </td></tr>
+    <tr><td class="paramname">player</td><td>Inteiro representando o jogador (1 para X, 2 para O). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o jogador venceu em alguma coluna, false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="adf1aac6b1a8c133abaad377b4632fd24" name="adf1aac6b1a8c133abaad377b4632fd24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf1aac6b1a8c133abaad377b4632fd24">&#9670;&#160;</a></span>valida_diagonal_principal_player()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool valida_diagonal_principal_player </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se o jogador venceu na diagonal principal. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tabuleiro</td><td>Matriz 3x3 representando o estado do jogo. </td></tr>
+    <tr><td class="paramname">player</td><td>Inteiro representando o jogador (1 para X, 2 para O). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o jogador venceu na diagonal principal, false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a823d1eb14f64741731f37b0c46ba599e" name="a823d1eb14f64741731f37b0c46ba599e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a823d1eb14f64741731f37b0c46ba599e">&#9670;&#160;</a></span>valida_diagonal_secundaria_player()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool valida_diagonal_secundaria_player </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se o jogador venceu na diagonal secundária. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tabuleiro</td><td>Matriz 3x3 representando o estado do jogo. </td></tr>
+    <tr><td class="paramname">player</td><td>Inteiro representando o jogador (1 para X, 2 para O). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o jogador venceu na diagonal secundária, false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="ad661731dc321fe5d8554d878c0966188" name="ad661731dc321fe5d8554d878c0966188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad661731dc321fe5d8554d878c0966188">&#9670;&#160;</a></span>valida_linha_player()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool valida_linha_player </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>player</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Verifica se o jogador venceu em alguma linha. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tabuleiro</td><td>Matriz 3x3 representando o estado do jogo. </td></tr>
+    <tr><td class="paramname">player</td><td>Inteiro representando o jogador (1 para X, 2 para O). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>true se o jogador venceu em alguma linha, false caso contrário. </dd></dl>
+
+</div>
+</div>
+<a id="a732edbf8bfe3675f6b084b7acf0afe47" name="a732edbf8bfe3675f6b084b7acf0afe47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a732edbf8bfe3675f6b084b7acf0afe47">&#9670;&#160;</a></span>verifica_resultado()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -115,12 +342,28 @@ Funções</h2></td></tr>
         <tr>
           <td class="memname">int verifica_resultado </td>
           <td>(</td>
-          <td class="paramtype">vector&lt; vector&lt; int &gt; &gt;&#160;</td>
-          <td class="paramname"><em>jogo_da_velha</em></td><td>)</td>
+          <td class="paramtype">const vector&lt; vector&lt; int &gt; &gt;&#160;</td>
+          <td class="paramname"><em>tabuleiro</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Verifica o resultado do jogo da velha. </p>
+<dl class="params"><dt>Parâmetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">tabuleiro</td><td>Matriz 3x3 representando o estado do jogo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Retorna</dt><dd>int Resultado do jogo:<ul>
+<li>-2: estado impossível</li>
+<li>-1: jogo em andamento</li>
+<li>0: empate</li>
+<li>1: vitória do jogador X</li>
+<li>2: vitória do jogador O </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
