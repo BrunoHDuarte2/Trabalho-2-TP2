@@ -2,89 +2,39 @@
 #include "velha.hpp"
 #include <vector>
 using std::vector;
-/*
-    valida_linha_X  <- estado do jogo da velha
-    verifica se ocorre tres 1's consecutivos em alguma das linhas.
-*/
-bool valida_linha_X(vector<vector<int>> tabuleiro) {
-    bool primeiraLinha = (tabuleiro[0][0] == 1)&&
-                        (tabuleiro[0][1] == 1)&&
-                        (tabuleiro[0][2] == 1);
-    bool segundaLinha = (tabuleiro[1][0] == 1)&&
-                        (tabuleiro[1][1] == 1)&&
-                        (tabuleiro[1][2] == 1);
-    bool terceiraLinha = (tabuleiro[2][0] == 1)&&
-                        (tabuleiro[2][1] == 1)&&
-                        (tabuleiro[2][2] == 1);
+bool valida_linha_player(vector<vector<int>> tabuleiro, int player) {
+    bool primeiraLinha = (tabuleiro[0][0] == player)&&
+                        (tabuleiro[0][1] == player)&&
+                        (tabuleiro[0][2] == player);
+    bool segundaLinha = (tabuleiro[1][0] == player)&&
+                        (tabuleiro[1][1] == player)&&
+                        (tabuleiro[1][2] == player);
+    bool terceiraLinha = (tabuleiro[2][0] == player)&&
+                        (tabuleiro[2][1] == player)&&
+                        (tabuleiro[2][2] == player);
     return primeiraLinha || segundaLinha || terceiraLinha;
 }
-/*
-    valida_linha_O  <- estado do jogo da velha
-    verifica se ocorre tres 2's consecutivos em alguma das linhas.
-*/
-bool valida_linha_O(vector<vector<int>> tabuleiro) {
-    bool primeiraLinha = (tabuleiro[0][0] == 2)&&
-                        (tabuleiro[0][1] == 2)&&
-                        (tabuleiro[0][2] == 2);
-    bool segundaLinha = (tabuleiro[1][0] == 2)&&
-                        (tabuleiro[1][1] == 2)&&
-                        (tabuleiro[1][2] == 2);
-    bool terceiraLinha = (tabuleiro[2][0] == 2)&&
-                        (tabuleiro[2][1] == 2)&&
-                        (tabuleiro[2][2] == 2);
-    return primeiraLinha || segundaLinha || terceiraLinha;
-}
-/*
-    valida_coluna_X  <- estado do jogo da velha
-    verifica se ocorre tres 1's consecutivos em alguma das colunas.
-*/
-bool valida_coluna_X(vector<vector<int>> tabuleiro) {
-    bool primeiraColuna = (tabuleiro[0][0] == 1)&&
-                        (tabuleiro[1][0] == 1)&&
-                        (tabuleiro[2][0] == 1);
-    bool segundaColuna = (tabuleiro[0][1] == 1)&&
-                        (tabuleiro[1][1] == 1)&&
-                        (tabuleiro[2][1] == 1);
-    bool terceiraColuna = (tabuleiro[0][2] == 1)&&
-                        (tabuleiro[1][2] == 1)&&
-                        (tabuleiro[2][2] == 1);
+bool valida_coluna_player(vector<vector<int>> tabuleiro, int player) {
+    bool primeiraColuna = (tabuleiro[0][0] == player)&&
+                        (tabuleiro[1][0] == player)&&
+                        (tabuleiro[2][0] == player);
+    bool segundaColuna = (tabuleiro[0][1] == player)&&
+                        (tabuleiro[1][1] == player)&&
+                        (tabuleiro[2][1] == player);
+    bool terceiraColuna = (tabuleiro[0][2] == player)&&
+                        (tabuleiro[1][2] == player)&&
+                        (tabuleiro[2][2] == player);
     return primeiraColuna || segundaColuna || terceiraColuna;
 }
-/*
-    valida_coluna_X  <- estado do jogo da velha
-    verifica se ocorre tres 2's consecutivos em alguma das colunas.
-*/
-bool valida_coluna_O(vector<vector<int>> tabuleiro) {
-    bool primeiraColuna = (tabuleiro[0][0] == 2)&&
-                        (tabuleiro[1][0] == 2)&&
-                        (tabuleiro[2][0] == 2);
-    bool segundaColuna = (tabuleiro[0][1] == 2)&&
-                        (tabuleiro[1][1] == 2)&&
-                        (tabuleiro[2][1] == 2);
-    bool terceiraColuna = (tabuleiro[0][2] == 2)&&
-                        (tabuleiro[1][2] == 2)&&
-                        (tabuleiro[2][2] == 2);
-    return primeiraColuna || segundaColuna || terceiraColuna;
+bool valida_diagonal_principal_player(vector<vector<int>> tabuleiro, int player) {
+    return (tabuleiro[0][0] == player)&&
+            (tabuleiro[1][1] == player)&&
+            (tabuleiro[2][2] == player);
 }
-bool valida_diagonal_principal_X(vector<vector<int>> tabuleiro) {
-    return (tabuleiro[0][0] == 1)&&
-            (tabuleiro[1][1] == 1)&&
-            (tabuleiro[2][2] == 1);
-}
-bool valida_diagonal_secundaria_X(vector<vector<int>> tabuleiro) {
-    return (tabuleiro[0][2] == 1) &&
-            (tabuleiro[1][1] == 1) &&
-            (tabuleiro[2][0] == 1);
-}
-bool valida_diagonal_principal_O(vector<vector<int>> tabuleiro) {
-    return (tabuleiro[0][0] == 2) &&
-            (tabuleiro[1][1] == 2) &&
-            (tabuleiro[2][2] == 2);
-}
-bool valida_diagonal_secundaria_O(vector<vector<int>> tabuleiro) {
-    return (tabuleiro[0][2] == 2) &&
-            (tabuleiro[1][1] == 2) &&
-            (tabuleiro[2][0] == 2);
+bool valida_diagonal_secundaria_player(vector<vector<int>> tabuleiro, int player) {
+    return (tabuleiro[0][2] == player) &&
+            (tabuleiro[1][1] == player) &&
+            (tabuleiro[2][0] == player);
 }
 /*
     empate  <- estado do jogo da velha.
@@ -129,17 +79,17 @@ int verifica_resultado(const vector<vector<int>> tabuleiro) {
     if ( impossivel(tabuleiro) ) {
         return -2;
     }
-    bool linhaDeX = valida_linha_X(tabuleiro);
-    bool colunaDeX = valida_coluna_X(tabuleiro);
-    bool diagonalPDeX = valida_diagonal_principal_X(tabuleiro);
-    bool diagonalSDeX = valida_diagonal_secundaria_X(tabuleiro);
+    bool linhaDeX = valida_linha_player(tabuleiro, 1);
+    bool colunaDeX = valida_coluna_player(tabuleiro, 1);
+    bool diagonalPDeX = valida_diagonal_principal_player(tabuleiro, 1);
+    bool diagonalSDeX = valida_diagonal_secundaria_player(tabuleiro, 1);
     if ( linhaDeX || colunaDeX || diagonalPDeX || diagonalSDeX ) {
         return 1;
     }
-    bool linhaDeO = valida_linha_O(tabuleiro);
-    bool colunaDeO = valida_coluna_O(tabuleiro);
-    bool diagonalPDeO = valida_diagonal_principal_O(tabuleiro);
-    bool diagonalSDeO = valida_diagonal_secundaria_O(tabuleiro);
+    bool linhaDeO = valida_linha_player(tabuleiro, 2);
+    bool colunaDeO = valida_coluna_player(tabuleiro, 2);
+    bool diagonalPDeO = valida_diagonal_principal_player(tabuleiro, 2);
+    bool diagonalSDeO = valida_diagonal_secundaria_player(tabuleiro, 2);
     if ( linhaDeO || colunaDeO || diagonalPDeO || diagonalSDeO ) {
         return 2;
     }
